@@ -67,7 +67,7 @@ Im Unity-Editor können wir jetzt Methoden auswählen die als Antwort auf die Er
 
 Wenn jetzt die Szene abgespielt wird sollte sich die Farbe des Triggers ändern, wenn der Flummi reinfliegt und sich wieder zurücksetzen, wenn er rausfliegt. Im Laufe dieses Kapitels haben wir jetzt zwei neue Arten von Objekte erstellt. Zum einen einen Flummi und eine Trigger-Box. Im letzten Kapitel haben wir außerdem drehende Körper erstellt. Aus all diesen Objekten können wir jetzt Prefabs erzeugen. Dazu können wir diese Objekte in der Szene auswählen und per Drag-and-Drop in das Projektfenster ziehen. Wenn wir jetzt kopien dieser Objekte in einer Szene benötigen können wir dessen Prefabs, die jetzt im Projektordner sichtbar sein sollten, genauso per Drag-and-Drop in die entsprechende Szene ziehen. Der Vorteil den wir jetzt haben ist, dass wir nur noch an einer Stelle, innerhalb des jeweiligen Prefabs, Änderungen vornehmen müssen, wenn wir zum Beispiel das Verhalten des Flummis für alle Kopien in allen Szenen verändern wollen. Jetzt brauchen wir nur noch einen Ordner für die Prefabs. Dorthin kann auch das <i>Physic Material</i> des Flummis verschoben werden.
 
-![](Images/PrefabFolder.png)
+![](Images/PrefabsFolder.png)
 
 ## 3 Character Movement
 
