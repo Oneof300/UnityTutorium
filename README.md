@@ -42,18 +42,18 @@ Wird jetzt die Szene abgespielt dreht sich unser Würfel mit konstanter Geschwin
 
 ![](Images/Scene1_2.png)
 
-## Unit 2: Collider, Character Movement und Prefabs
+## 2: Collider, Character Movement und Prefabs
 
-## Unit 3: High Definition RP und Visual Effect Graph
+## 3 High Definition RP und Visual Effect Graph
 
-## Unit 4: Trigger und Rigidbodies
+## 4 Trigger und Rigidbodies
 
-## Unit 5: Scriptable Objects
+## 5 Scriptable Objects
 
-## Unit 6: Post Processing
+## 6 Post Processing
 
-## Unit 7: GPU-Events
+## 7 GPU-Events
 
-## Unit 8: Shader Graph
+## 8 Shader Graph
 
-## Unit 9: Shader Graph und Visual Effect Graph
+## 9 Shader Graph und Visual Effect Graph
