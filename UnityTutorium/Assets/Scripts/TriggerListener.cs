@@ -8,13 +8,15 @@ public class TriggerListener : MonoBehaviour
     public UnityEvent TriggerEnterResponse;
     public UnityEvent TriggerExitResponse;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger Enter");
         TriggerEnterResponse.Invoke();
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
+        Debug.Log("Trigger Exit");
         TriggerExitResponse.Invoke();
     }
 }
