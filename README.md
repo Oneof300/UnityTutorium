@@ -1,5 +1,5 @@
 # Unity Tutorium
-Dieses Repository dient für ein Tutorium an der Hochschule Furtwangen zur Einführung in Unity.
+Dieses Projekt wurde im Rahmen eines Tutoriums an der Hochschule Furtwangen zur Einführung in Unity erstellt.
 
 ## 1 Szenen, Objekte und Komponenten
 Eine Szene in Unity ist eine Menge von Objekten, die in einer Baumstruktur angeordnet sind. Wenn eine Szene erstellt wird, oder auch die <i>SampleScene</i> mit der ein Projekt beginnt, dann enthält diese bereits zwei Objekte. Jeweils eine <i>Main Camera</i> und ein <i>Directional Light</i>. Die Kamera nimmt das Bild im Spiel auf und das Licht simuliert die Sonne.
