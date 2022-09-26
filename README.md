@@ -102,7 +102,7 @@ Jetzt können wir uns durch die Szene bewegen, aber wir haben noch keine Interak
 
 ![](Images/Push1.png)
 
-Um jetzt den Körper zu schieben rufen wir <i>AddForce</i> auf. Mit <i>hit.moveDirection</i> erhalten wir die Richtung, in die sich der <i>Character Controller</i> bewegt und somit auch die Richtung in die wir die Kraft anwenden wollen. Jetzt brauchen wir die Richtung nur noch mit einer stärke multiplizieren und wir haben unseren Kraftvektor. Als <i>ForceMode</i> wollen wir <i>Impulse</i> angeben. Fügen wir diese Komponente dem <i>Player Character</i> hinzu und testen nochmal die Szene, sollten wir in der Lage sein den Flummi zu bewegen.
+Wenn kein <i>Rigidbody</i> existiert oder der Körper Kinematisch ist, soll die Methode abgebrochen werden. Dafür wird hier die <i>return</i>-Anweisung verwendet. Um jetzt den Körper zu schieben rufen wir <i>AddForce</i> auf. Mit <i>hit.moveDirection</i> erhalten wir die Richtung, in die sich der <i>Character Controller</i> bewegt und somit auch die Richtung in die wir die Kraft anwenden wollen. Jetzt brauchen wir die Richtung nur noch mit einer stärke multiplizieren und wir haben unseren Kraftvektor. Als <i>ForceMode</i> wollen wir <i>Impulse</i> angeben. Fügen wir diese Komponente dem <i>Player Character</i> hinzu und testen nochmal die Szene, sollten wir in der Lage sein den Flummi zu bewegen.
 
 
 ## 4 Scriptable Objects
