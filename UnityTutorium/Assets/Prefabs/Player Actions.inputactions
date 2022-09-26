@@ -2,7 +2,7 @@
     "name": "Player Actions",
     "maps": [
         {
-            "name": "Default",
+            "name": "Default Actions",
             "id": "b4ad3540-62ce-40ef-8e36-76a2ecc3f10f",
             "actions": [
                 {
