@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerListener : MonoBehaviour
+namespace UnityTutorium
 {
-    [SerializeField] UnityEvent TriggerEnterResponse;
-    [SerializeField] UnityEvent TriggerExitResponse;
-
-    void OnTriggerEnter(Collider other)
+    public class TriggerListener : MonoBehaviour
     {
-        TriggerEnterResponse.Invoke();
-    }
+        [SerializeField] UnityEvent TriggerEnterResponse;
+        [SerializeField] UnityEvent TriggerExitResponse;
 
-    void OnTriggerExit(Collider other)
-    {
-        TriggerExitResponse.Invoke();
+        void OnTriggerEnter(Collider other)
+        {
+            TriggerEnterResponse.Invoke();
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            TriggerExitResponse.Invoke();
+        }
     }
 }
