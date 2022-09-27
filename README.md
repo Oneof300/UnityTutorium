@@ -132,10 +132,19 @@ Jetzt haben wir neue Ereignisse eingefügt, die sich über unsere Trigger aufruf
 
 ![](Images/Firework1.png)
 
+In einem <i>Visual Effect Graph</i> wird ein Partikelsystem definiert. Ein Partikelsystem verwaltet mehrere Partikel und ist in der Lage diese gleichzeitig zu bewegen und animieren, wobei Partikel einfache Objekte sind, die in der Regel über ein 2D-Bild oder ein 3D-Körper dargestellt werden. Damit können verschiedene visuelle Effekte wie Feuer, Nebel, Explusionen etc. umgesetzt werden. Ein <i>Visual Effect Graph</i> startet mit vier Komponenten. <i>Spawn, Initialize Particle, Update Particle</i> und <i>Output Particel Quad</i>. Dabei verhalten sich <i>Initialize</i> und <i>Update</i> wie <i>Start</i> und <i>Update</i> von <i>MonoBehavior</i> pro Partikel. In <i>Spawn</i> wird definiert, wann wie viele Partikel erzeugt werden. In <i>Output</i> wird festgelegt wie ein Partikel dargestellt wird. Hier können wir die Textur von <i>DefaultParticle</i> zu <i>Default-ParticleSystem</i> ändern. Damit haben wir einen weißen Kreis, der nach außen hin transparent wird. Bei <i>Set Color over Life</i> lässt sich der Farbverlauf für die Partikel einstellen. Bei einem Gradienten wird oben die Transparenz und unten die Farbe festgelegt. So kann der Farbverlauf z. B. wie folgt festgelegt werden.
 
+![](Images/Firework2.png)
+
+Bei Spawn wollen wir anstatt kontinuierlich, auf einen Schlag mehrere Partikel erzeugen. Dafür entfernen wir den aktuellen Block und fügen als neuen Block, <i>Single Burst</i> ein. Bei dem Feld <i>Count</i> können wir dann die Anzahl festlegen. Wichtig ist hierbei, dass nie mehr Partikel, als in <i>Capacity</i> von <i>Initialize Particle</i> definiert ist, gleichzeitig existieren können. Es empfiehlt sich eine Kapazität höher als die <i>Spawn</i>-Anzahl festzulegen, damit das Feuerwerk mehrmals abgespielt werden kann, auch wenn die vorherigen Partikel noch nicht verschwunden sind.
+
+![](Images/Firework3.png)
+
+Um den Effekt in eine Szene einzufügen, können wir ihn per Drag-and-Drop reinziehen. Haben wir den <i>Visual Effect</i> ausgewählt, erscheint ein Fenster mit dem wir den Effekt steuern können. Hier können wir ihn stoppen, pausieren/abspielen, schrittweise abspielen und neu starten. Mit <i>Rate</i> lässt sich die Abspielrate oder auch -geschwindigkeit festlegen. Wenn wir auf <i>Play()</i> oder neu starten klicken, dann sehen wir unseren Partikeleffekt in Aktion. Noch sieht nicht zu sehr nach einem Feuerwerk aus. Wir wollen, dass die Partikel eine Kugel bilden. Dazu müssen wir <i>Set Velocity Random</i> gegen <i>Set Velocity from Direction & Speed</i> tauschen. Dann sollen die Partikel in der Luft abbremsen und von Schwerkraft beeinflusst werden. Hierfür fügen wir bei Update <i>Linear Drag</i> und <i>Gravity</i> ein. Abschließend können wir noch <i>Set Size over Life</i> mit <i>Set Size Random</i> ersetzen. Dadurch haben wir keine Größenänderung sondern unterschiedliche Größen unter den Partikeln. Wenn wir jetzt den Effekt abspielen und etwas die Werte anpassen, sieht unser Feuerwerk schon besser aus.
 
 
 ## 6 Post Processing
+
 
 ## 7 GPU-Events
 
