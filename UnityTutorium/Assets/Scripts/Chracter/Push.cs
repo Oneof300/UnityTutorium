@@ -8,7 +8,7 @@ namespace UnityTutorium.Character
 
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            Rigidbody body = hit.collider.attachedRigidbody;
+            var body = hit.collider.attachedRigidbody;
             if (!body || body.isKinematic || hit.moveDirection.y < -0.3f) return;
 
             body.AddForce(new Vector3(hit.moveDirection.x, 0.0f, hit.moveDirection.z) * _strength, ForceMode.Impulse);

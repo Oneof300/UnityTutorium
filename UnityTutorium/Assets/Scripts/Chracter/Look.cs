@@ -13,10 +13,8 @@ namespace UnityTutorium.Character
         Vector2 _rotation;
 
         // Start is called before the first frame update
-        void Start()
-        {
+        void Start() =>
             Cursor.lockState = CursorLockMode.Locked;
-        }
 
         // Update is called once per frame
         void Update()
@@ -26,9 +24,7 @@ namespace UnityTutorium.Character
             _target.rotation = Quaternion.Euler(_rotation.x, _rotation.y, 0f);
         }
 
-        public void OnInput(InputAction.CallbackContext context)
-        {
+        public void OnInput(InputAction.CallbackContext context) =>
             _input = context.ReadValue<Vector2>();
-        }
     }
 }
