@@ -13,8 +13,12 @@ namespace UnityTutorium.Character
         Vector2 _rotation;
 
         // Start is called before the first frame update
-        void Start() =>
+        void Start()
+        {
             Cursor.lockState = CursorLockMode.Locked;
+            _rotation.x = _target.rotation.x;
+            _rotation.y = _target.rotation.y;
+        }
 
         // Update is called once per frame
         void Update()
