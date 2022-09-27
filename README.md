@@ -126,7 +126,7 @@ Beim <i>EventListener</i> benötigen wir ein Feld mit dem Ereignis, auf das reag
 Zum Testen können wir unser <i>Trigger</i>-Prefab klonen und diesen <i>Trigger Door</i> nennen. Dann erstellen wir ein Ereignis <i>Door Open</i>. Auf <i>Trigger Enter</i> soll jetzt das Ereignis ausgelöst werden. Danach erstellen wir ein neues Prefab mit einem Würfel, das wir <i>Door</i> nennen. Dieses Prefab soll auch einen <i>EventListener</i> bekommen, welcher auf <i>Door Open</i> hört. Als Antwort soll der <i>Collider</i> und <i>Mesh Renderer</i> deaktiviert werden, sodass die Tür bzw. der Würfel verschwindet. Wenn wir beide Prefabs in eine Szene ziehen und sie starten, sollte die Tür verschwinden, wenn der Trigger von uns ausgelöst wird. Jetzt können wir noch weitere <i>Trigger Door</i>-Objekte und weitere Türen einfügen. Dadurch haben wir jetzt mehre <i>Trigger</i> zur Auswahl, über die sich automatisch alle Türen öffnen, ohne dass wir dafür jeden <i>Trigger</i> einzeln konfigurieren mussten.
 
 
-## 5 High Definition RP und Visual Effect Graph
+## 5 Visual Effect Graph
 
 Jetzt haben wir neue Ereignisse eingefügt, die sich über unsere Trigger aufrufen lassen. Jetzt könnten wir auch auf die Idee kommen ein Feuerwerk auf ein Ereignis starten zu lassen. Für solche Effekte eignet sich der <i>Visual Effect Graph</i> von Unity. Das ist ein Paket im <i>Unity Registry</i>, mit dem sich Partikeleffekte in einem Graphen visuell programmieren lassen. Um das Paket zu nutzen braucht es aber entweder die <i>Universal-</i> oder die </i>High Definition Render Pipeline</i>. Hier verwenden wir die </i>High Definition RP</i>, welche mächtiger ist als die </i>Universal RP</i>, dafür aber weniger, nur leistungsfähigere Geräte unterstützt. Wenn wir beide Pakete installiert haben können wir im Projektordner ein <i>Visual Effect Graph</i> unter dem Eintrag <i>Visual Effects</i> erstellen. Öffnen wir diesen sehen wir folgendes Fenster.
 
@@ -148,6 +148,5 @@ Um den Effekt in eine Szene einzufügen, können wir ihn per Drag-and-Drop reinz
 
 ## 7 GPU-Events
 
-## 8 Shader Graph
 
-## 9 Shader Graph und Visual Effect Graph
+## 8 Shader Graph
