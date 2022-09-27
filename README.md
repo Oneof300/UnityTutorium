@@ -107,7 +107,33 @@ Wenn kein <i>Rigidbody</i> existiert oder der Körper Kinematisch ist, soll die 
 
 ## 4 Scriptable Objects
 
+Wenn wir für Unity eigene Typen von Assets definieren wollen, dann geht das mit <i>Scriptable Objects</i>. Eine Anwendung dafür ist z. B. ein Fließkommawert, der in einem Asset gespeichert ist. Damit könnten wir für unsere erste Szene dafür sorgen, dass wir die Drehgeschwindigkeit nur an einer Stelle ändern müssen, obwohl wir mehrere Würfel mit <i>Rotation Animator</i>-Komponenten drehen lassen. Ein <i>Scriptable Objects</i> erstellen wir in Unity über ein C#-Skript. Hier müssen wir den Typ <i>MonoBehavior</i> auf <i>ScriptableObject</i> ändern, von dem wir erben. In der Klasse wollen wir einfach nur ein Feld <i>value</i> definieren. Um auf den Wert auch von außen zugreifen zu können definieren wir noch eine Eigenschaft mit dem gleichen Namen. Eigenschaften verhalten sich wie Felder in C# und fassen eine Lese- und Schreibmethode zusammen. So können wir mithilfe einer Eigenschaft eine öffentliche Lesemethode für unser nicht-öffentliches Feld definieren. Das sieht dann wie folgt aus.
+
+![](Images/FloatValue1.png)
+
+Damit die Klasse fast fertig. Was noch fehlt ist das Attribut <i>[CreateAssetMenu]</i> vor unserer Klassendefinition. Dadurch wird bei dem <i>Create Asset</i>-Fenster ein Eintrag für unser <i>ScriptableObject</i> gemacht. Wir können jetzt also im Projektordner ein <i>FloatValue</i> erstellen. Diesen nennen wir <i>Rotate Speed</i>. Noch haben wir aber keine Möglichkeit dieses Objekt als Wert von der Geschwindigkeit eines <i>RotationAnimators</i> zu setzen. Dazu müssen wir eine kleine Änderung im Skript machen. Anstatt eine Geschwindigkeit vom Typ <i>float</i> soll es jetzt den Typ <i>FloatValue</i> erwarten. Gehen wir in den Unity-Editor zurück können wir jetzt unser <i>Rotate Speed</i> in das Geschwindigkeitsfeld des <i>RotationAnimators</i> einfügen. Spielen wir die Szene jetzt ab und ändern den Wert von <i>Rotate Speed</i> aktualisiert sich die Geschwindigkeit der Würfel und es drehen sich immer alle gleich schnell. Eine weitere Anwendung sind Ereignisse, die nicht nur innerhalb einer Szene oder eines Prefabs bekannt sein sollen, sondern als Asset im ganzen Projekt. So können wir mehrere Prefabs erstellen, die das gleiche Ereignis auslösen und Prefabs, die auf das gleiche Ereignis reagieren. Hierfür sind zwei Klassen nötig. Einmal ein <i>ScriptableObject Event</i> und ein <i>MonoBehavior EventListener</i>. Für die Implementierung unseres eigenen Events brauchen wir erst einen Methodentyp, den wir in einer Liste speichern und aufrufen können. Um einen Methodentyp zu deklarieren gibt es in C# das Schlüsselwort <i>delegate</i>. Dann schreiben wir wie gewohnt einen Rückgabewert, Namen und die Parameter. Abgeschlossen wird der Typ dann mit einem Semikolon anstatt die Methode mit geschweiften Klammern zu öffnen. Darunter definieren wir ein Feld mit dem Typ <i>List<EventDelegate></i> das direkt initialisiert wird.
+
+![](Images/Event1.png)
+
+Um sich beim Ereignis registrieren zu können fügen wir eine Methode <i>AddListener</i> hinzu. Diese erwartet ein <i>EventDelegate</i>. Bevor wir den <i>Listener</i> unserer Liste hinzufügen, prüfen wir, ob es schon enthalten ist, um zu verhindern, dass <i>Listener</i> doppelt in der Liste vorhanden sind. Elemente können mit der <i>Add</i>-Methode in eine Liste eingefügt werden. Zusätzlich können wir noch eine <i>RemoveListener</i>-Methode schreiben. Um das Ereignis auch auslösen zu können braucht es noch eine <i>Invoke</i>-Methode. Hier wird jeder <i>Listener</i> aufgerufen. Wir können alle Elemente einer Liste mit einer <i>foreach</i>-Schleife durchlaufen. Dabei schreiben wir <i>foreach</i>, runde Klammer auf, die Variable in der immer ein Element der Liste zwischengespeichert werden soll, <i>in</i> und die Liste die wir durchlaufen wollen. Die Klasse sieht dann wie folgt aus.
+
+![](Images/Event2.png)
+
+Beim <i>EventListener</i> benötigen wir ein Feld mit dem Ereignis, auf das reagiert werden soll und ein <i>UnityEvent response</i> als Antwort auf das Ereignis. Dadurch wird wie beim <i>TriggerListener</i> nicht im Skirpt selbst definiert was beim Eintritt des Ereignisses passieren soll, sondern erst im Unity-Editor. Jetzt muss sich der <i>Listener</i> nur beim Ereignis registrieren. Das machen wir bei <i>OnEnable</i>. Diese Methode wird aufgerufen, wenn die Komponente aktiviert wird. Genauso entfernen wir unserere registrierung bei <i>OnDisable</i>. Als <i>EventDelegate</i> können wir dann <i>response.Invoke</i> angeben.
+
+![](Images/EventListener1.png)
+
+Zum Testen können wir unser <i>Trigger</i>-Prefab klonen und diesen <i>Trigger Door</i> nennen. Dann erstellen wir ein Ereignis <i>Door Open</i>. Auf <i>Trigger Enter</i> soll jetzt das Ereignis ausgelöst werden. Danach erstellen wir ein neues Prefab mit einem Würfel, das wir <i>Door</i> nennen. Dieses Prefab soll auch einen <i>EventListener</i> bekommen, welcher auf <i>Door Open</i> hört. Als Antwort soll der <i>Collider</i> und <i>Mesh Renderer</i> deaktiviert werden, sodass die Tür bzw. der Würfel verschwindet. Wenn wir beide Prefabs in eine Szene ziehen und sie starten, sollte die Tür verschwinden, wenn der Trigger von uns ausgelöst wird. Jetzt können wir noch weitere <i>Trigger Door</i>-Objekte und weitere Türen einfügen. Dadurch haben wir jetzt mehre <i>Trigger</i> zur Auswahl, über die sich automatisch alle Türen öffnen, ohne dass wir dafür jeden <i>Trigger</i> einzeln konfigurieren mussten.
+
+
 ## 5 High Definition RP und Visual Effect Graph
+
+Jetzt haben wir neue Ereignisse eingefügt, die sich über unsere Trigger aufrufen lassen. Jetzt könnten wir auch auf die Idee kommen ein Feuerwerk auf ein Ereignis starten zu lassen. Für solche Effekte eignet sich der <i>Visual Effect Graph</i> von Unity. Das ist ein Paket im <i>Unity Registry</i>, mit dem sich Partikeleffekte in einem Graphen visuell programmieren lassen. Um das Paket zu nutzen braucht es aber entweder die <i>Universal-</i> oder die </i>High Definition Render Pipeline</i>. Hier verwenden wir die </i>High Definition RP</i>, welche mächtiger ist als die </i>Universal RP</i>, dafür aber weniger, nur leistungsfähigere Geräte unterstützt. Wenn wir beide Pakete installiert haben können wir im Projektordner ein <i>Visual Effect Graph</i> unter dem Eintrag <i>Visual Effects</i> erstellen. Öffnen wir diesen sehen wir folgendes Fenster.
+
+![](Images/Firework1.png)
+
+
+
 
 ## 6 Post Processing
 
