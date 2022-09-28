@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2981945493892134957
+--- !u!1001 &856054732547285558
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 656062281176491688, guid: 7827366595aa25c49a16db3d0c44c76e, type: 3}
       propertyPath: m_Name
-      value: Trigger Door
+      value: Trigger Firework
       objectReference: {fileID: 0}
     - target: {fileID: 656062281176491690, guid: 7827366595aa25c49a16db3d0c44c76e, type: 3}
       propertyPath: m_RootOrder
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 656062281176491701, guid: 7827366595aa25c49a16db3d0c44c76e, type: 3}
       propertyPath: TriggerEnterResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 4f563e497632d7a48af016ab1bfe8b03, type: 2}
+      objectReference: {fileID: 11400000, guid: cad3e671908cb454e806ff0409e891cb, type: 2}
     - target: {fileID: 656062281176491701, guid: 7827366595aa25c49a16db3d0c44c76e, type: 3}
       propertyPath: TriggerEnterResponse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
