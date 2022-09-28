@@ -144,6 +144,9 @@ Um den Effekt in eine Szene einzufügen, können wir ihn per Drag-and-Drop reinz
 
 
 ## 6 Post Processing
+Post Processing ermöglicht das geränderte Bild der Kamera nochmal nachzubereiten. Hier werden Effekte wie <i>Tonemapping, Bloom</i> und <i>Motion Blur</i> angewandt. Mit der <i>High Definition RP</i> wird standardmäßig Post Processing betrieben. Die Einstellungen dafür finden wir unter <i>Assets/HDRPDefaultResources/DefaultSettingsVolumeProfile</i>, solange wir sie von Unity haben erzeugen lassen. Das sind die Einstellungen, die die Pipeline nutzt solange kein <i>Volume</i> die Kamera beeinflusst. Wenn wir jetzt für eine Szene andere Einstellungen nutzen wollen, können wir ein <i>Global Volume</i> einfügen. Es gibt auch <i>Volumes</i>, die nicht global sind. Diese haben nur einen Effekt, wenn sich die Kamera in deren Bereich befindet. Dadurch kann die Atmosphäre von Ort zu Ort gewächselt werden. Unser Volume hat noch kein Profil. Mit dem <i>new</i>-Button lässt sich ein neues erstellen. Um jetzt unser Feuerwerk mehr herausstechen zu lassen können ein <i>Bloom</i>-Effekt hinzufügen. Mit <i>Add Override</i> lassen sich Effekte einfügen, die die Standardeffekte überschreiben. Bei dem <i>Bloom</i>-Effekt können wir die <i>intensity</i> auf 0.7 stellen. Dadurch leuchtet alles viel zu stark, sodass das Bild verwaschen wirkt. Um dieses Problem zu beheben können wir einen <i>threshold</i> von 0.9 einstellen. Dadurch wirkt der <i>Bloom</i>-Effekt erst bei einer Intensität (Helligkeit) größer als 0.9. Wenn wir jetzt unser Feuerwerk abspielen, leuchten die Partikel stärker. Wir können noch weitere Effekte einfügen wie z. B. Nebel, doch die meisten Effekte sind schon standardmäßig aktiviert, nur wenn wir sie individuell anpassen wollen können wir sie hier auch einfügen, wie wir es mit dem <i>Bloom</i>Effekt gemacht haben.
+
+![](Images/GlobalVolume1.png)
 
 
 ## 7 GPU-Events
