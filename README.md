@@ -61,7 +61,7 @@ Jetzt haben wir eine Ausgabe, wenn der <i>Trigger</i> ausgelöst wird aber sonst
 
 ![](Images/TriggerListener3.png)
 
-Dann fügen wir dem Skript zwei neue Felder <i>TriggerEnterResponse</i> und <i>TriggerExitResponse</i> vom Typ <i>UnityEvent</i> hinzu. Diese können wir dann in den Entsprechenden Methoden, die bis jetzt nur eine Debug-Ausgabe enthalten, auslösen, indem wir jeweils deren <i>Invoke</i>-Methode aufrufen. Das sollte dann wie folgt aussehen.
+Dann fügen wir dem Skript zwei neue Felder <i>TriggerEnterResponse</i> und <i>TriggerExitResponse</i> vom Typ <i>UnityEvent</i> hinzu. Diese können wir in den Entsprechenden Methoden, die bis jetzt nur eine Debug-Ausgabe enthalten, auslösen, indem wir jeweils deren <i>Invoke</i>-Methode aufrufen. Das sollte schließlich wie folgt aussehen.
 
 ![](Images/TriggerListener4.png)
 
