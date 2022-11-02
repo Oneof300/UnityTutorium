@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotationAnimator : MonoBehaviour
 {
-    [SerializeField] float _speed;
+    [SerializeField] FloatVariable _speed;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,6 @@ public class RotationAnimator : MonoBehaviour
     void Update()
     {
         // deltaTime: Zeit in Sekunden, die seit dem letzten Frame vergangen ist
-        transform.Rotate(new Vector3(-5, 10, 0) * _speed * Time.deltaTime);
+        transform.Rotate(new Vector3(-5, 10, 0) * _speed.Value * Time.deltaTime);
     }
 }
