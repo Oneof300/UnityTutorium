@@ -193,4 +193,4 @@ Jetzt können wir noch weitere Partikel erscheinen lassen um einen Einschlagseff
 
 ![](Images/LightningVFX2.png)
 
-Dieser Effekt wurde nach der Vorlage eines Tutorials von Gabriel Aguiar Prod. gemacht (https://www.youtube.com/watch?v=40m_HUENh3E).
+Dieser Effekt wurde nach der Vorlage eines Tutorials von Gabriel Aguiar Prod. gemacht (https://www.youtube.com/watch?v=40m_HUENh3E). Ansonsten ist vielleicht folgender Vortrag, über Shader für VFX, noch interessant anzuschauen (https://www.youtube.com/watch?v=pqdVG_qcKok&t=1904s). Hier werden die Beispiele zwar in der Unreal-Engine gezeigt, jedoch können die Konzepte auch in Unity angewandt werden.
