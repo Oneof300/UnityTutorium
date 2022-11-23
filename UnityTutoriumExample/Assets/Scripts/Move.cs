@@ -27,7 +27,7 @@ public class Move : MonoBehaviour
             _verticalVelocity += _gravity * Time.deltaTime;
 
         // transform: Transformation (Position/Rotation/Skalierung) des Objekts, an dem dieses Skript angefügt ist
-        _controller.Move((transform.right * _input.x + transform.forward * _input.y + Vector3.up * _verticalVelocity) * 10f * Time.deltaTime);
+        _controller.Move((transform.right * _input.x + transform.forward * _input.y) * 10f * Time.deltaTime + Vector3.up * _verticalVelocity * Time.deltaTime);
     }
 
     public void OnInput(InputAction.CallbackContext context)

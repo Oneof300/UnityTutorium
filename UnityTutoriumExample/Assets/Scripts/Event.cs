@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class Event : ScriptableObject
 {
-    public delegate void EventDelegate();
+    List<UnityEvent> _listeners = new List<UnityEvent>();
 
-    List<EventDelegate> _listeners = new List<EventDelegate>();
-
-    public void AddListener(EventDelegate listener)
+    public void AddListener(UnityEvent listener)
     {
         if (!_listeners.Contains(listener)) _listeners.Add(listener);
     }
 
-    public void RemoveListener(EventDelegate listener)
+    public void RemoveListener(UnityEvent listener)
     {
         _listeners.Remove(listener);
     }
@@ -23,7 +22,7 @@ public class Event : ScriptableObject
     {
         foreach (var listener in _listeners)
         {
-            listener();
+            listener.Invoke();
         }
     }
 }

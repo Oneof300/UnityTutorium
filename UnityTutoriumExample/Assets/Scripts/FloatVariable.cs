@@ -7,5 +7,5 @@ public class FloatVariable : ScriptableObject
 {
     [SerializeField] float _value;
 
-    public float Value => _value;
+    public float Value { get => _value; }
 }
