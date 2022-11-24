@@ -20,6 +20,7 @@ public class Event : ScriptableObject
 
     public void Invoke()
     {
+        Debug.Log(name + " raised");
         foreach (var listener in _listeners)
         {
             listener.Invoke();
